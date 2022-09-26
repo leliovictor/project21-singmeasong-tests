@@ -6,7 +6,8 @@
   "main": "dist/src/server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "test": "jest -i"
+    "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test jest -i",
+    "test:unit": "dotenv -e .env.test jest -- -i --coverage --testPathPattern=tests/unit"
   },
   "keywords": [],
   "author": "Lelio Victor",
